@@ -1,0 +1,45 @@
+/* Basic styling for the love note page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fbe4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  color: #ff577f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.love-button {
+  background-color: #ff577f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.love-button:hover {
+  background-color: #ff2e53;
+}
