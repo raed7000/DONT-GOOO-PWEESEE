@@ -1,147 +1,19 @@
-/* Basic styling for the love note page */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f9c6d4, #fdb9c8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  color: #3a3a3a;
-}
+const loveButton = document.getElementById('loveButton');
+const message = document.getElementById('message');
 
-.container {
-  text-align: center;
-  padding: 40px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  width: 90%;
-  max-width: 500px;
-}
+const loveMessages = [
+  "Maliha, you are the light that brightens my world. Every second with you feels like a dream come true, and I can't imagine life without you by my side. Your love fills my heart with joy and makes every moment unforgettable. 💖",
+  "In your eyes, I see my future. In your smile, I find my happiness. You've made my world a better place, and every moment with you is a gift I treasure deeply. Together, we'll make beautiful memories, hand in hand. I love you more than words can express. 🌹",
+  "Every time I think of you, my heart skips a beat. The love we share is the most beautiful thing I've ever known, and with each passing day, I fall more in love with you. You're the one I want to build a future with, and nothing will ever change that. ❤️",
+  "Maliha, when I look at you, I see my everything—my love, my joy, and my reason for being. You complete me in ways I never thought possible. I'll cherish you and love you more each and every day, for as long as I live. You are my forever. 💞",
+  "You’re my heart’s greatest treasure, Maliha. You bring warmth, love, and happiness to my life in a way I never imagined possible. With you, every moment is worth living, and every day is filled with love. I'll always be here for you, no matter what. 💘",
+  "My love, you are the reason I wake up with a smile, the reason my heart beats faster, and the reason I feel so complete. I want to spend every moment of my life making you as happy as you make me. Forever and always, I’ll love you. 😘",
+  "From the moment we met, I knew my life had changed forever. Your presence fills me with peace and warmth, and your love fills me with strength. No matter where life takes us, I promise to always stand by you, to love you, and to cherish you endlessly. 💕",
+  "Maliha, you are the piece of my heart I didn't know I was missing. Every day with you is a new adventure, filled with laughter, joy, and love. I am so grateful for you, and I’ll never take a single moment with you for granted. You’re my everything. 💝",
+  "If I could, I would capture every smile, every laugh, every moment with you and keep them in my heart forever. You make the world a better place, and I’m beyond thankful that I get to call you mine. My love for you is boundless. 💖"
+];
 
-.heart-container {
-  position: absolute;
-  top: -80px;
-  left: -100px;
-  z-index: -1;
-}
-
-.heart {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(45deg, #ff577f, #ff2e53);
-  clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%) rotate(-45deg);
-  animation: heart-animation 4s infinite ease-in-out;
-}
-
-.header {
-  font-family: 'Playfair Display', serif;
-  color: #ff577f;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.message {
-  font-size: 1.4rem;
-  color: #555;
-  margin-bottom: 30px;
-  font-weight: 300;
-  line-height: 1.6;
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-}
-
-.love-button {
-  background-color: #ff577f;
-  color: white;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  animation: buttonAnimation 1.5s ease-in-out infinite;
-}
-
-.love-button:hover {
-  background-color: #ff2e53;
-  transform: scale(1.1);
-}
-
-.love-button:active {
-  transform: scale(1);
-}
-
-/* Floating hearts animation */
-.floating-hearts {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 100;
-}
-
-.heart-floating {
-  width: 30px;
-  height: 30px;
-  background: radial-gradient(circle, #ff577f, #ff2e53);
-  clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
-  position: absolute;
-  animation: floatHearts 6s infinite;
-}
-
-.heart-floating:nth-child(1) {
-  animation-delay: 0s;
-  left: 20px;
-}
-
-.heart-floating:nth-child(2) {
-  animation-delay: 2s;
-  left: 50px;
-}
-
-.heart-floating:nth-child(3) {
-  animation-delay: 4s;
-  left: 80px;
-}
-
-.heart-floating:nth-child(4) {
-  animation-delay: 6s;
-  left: 120px;
-}
-
-@keyframes floatHearts {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  50% { transform: translateY(-100px) scale(1.5); opacity: 0.5; }
-  100% { transform: translateY(0) scale(1); opacity: 1; }
-}
-
-@keyframes heart-animation {
-  0% { transform: translateX(-50%) rotate(-45deg); }
-  50% { transform: translateX(-50%) rotate(0deg); }
-  100% { transform: translateX(-50%) rotate(-45deg); }
-}
-
-@keyframes buttonAnimation {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+loveButton.addEventListener('click', function() {
+  const randomMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+  message.textContent = randomMessage;
+});
